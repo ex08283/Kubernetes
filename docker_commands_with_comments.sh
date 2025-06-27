@@ -72,10 +72,16 @@ docker run -p 3000:3000 day02-todo
 # ------------------------------
 docker exec -it infallible_leakey sh
 
-
 # ------------------------------
 # Stop a running Docker container
 # Replace 'infallible_leakey' with your container's actual name or ID
 # Use `docker ps` to list running containers and find the name or ID
 # ------------------------------
 docker stop infallible_leakey
+
+# ------------------------------
+# Inspect detailed information about a container or image
+# Replace 'ddfa5d0e61c9' with your container/image ID or name
+# Useful for debugging, networking, volume info, etc.
+# ------------------------------
+docker inspect ddfa5d0e61c9
