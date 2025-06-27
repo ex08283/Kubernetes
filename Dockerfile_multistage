@@ -1,0 +1,16 @@
+# -------- Stage 1: Build the application using Node.js --------
+FROM node:18-alpine AS installer            # Use a lightweight Node.js base image and name this stage 'installer'
+WORKDIR /app                                # Set the working directory inside the container to /app
+
+COPY package*.json ./                       # Copy package.json and package-lock.json to install dependencies
+RUN npm install                             # Install project dependencies
+
+COPY . .                                    # Copy the entire project into the container
+RUN npm run build                           # Build the project (typically creates a production-ready build in /app/build)
+
+# -------- Stage 2: Serve the build using Nginx --------
+FROM nginx:latest AS deployer               # Use the official Nginx image and name this stage 'deployer'
+
+COPY --from=installer /app/build /usr/share/nginx/html
+# Copy the production build from the 'installer' stage into the Nginx HTML directory
+# This will serve the built app via Nginx
