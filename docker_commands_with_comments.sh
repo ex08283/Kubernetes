@@ -77,3 +77,11 @@ docker run -p 3000:3000 day02-todo
 # Replace 'infallible_leakey' with your container's actual name or ID
 # ------------------------------
 docker exec -it infallible_leakey sh
+
+
+# ------------------------------
+# Stop a running Docker container
+# Replace 'infallible_leakey' with your container's actual name or ID
+# Use `docker ps` to list running containers and find the name or ID
+# ------------------------------
+docker stop infallible_leakey
