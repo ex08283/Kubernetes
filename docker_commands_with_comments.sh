@@ -23,12 +23,6 @@ docker push ex08283/test-repo:latest
 docker pull ex08283/test-repo:latest
 
 # ------------------------------
-# Push the image to Docker Hub again (if updated locally)
-# Confirms your latest version is pushed
-# ------------------------------
-docker push ex08283/test-repo:latest
-
-# ------------------------------
 # Run a container from the image pulled from Docker Hub
 # -d: detached mode (runs in background)
 # -p: maps port 3000 on host to 3000 in container
